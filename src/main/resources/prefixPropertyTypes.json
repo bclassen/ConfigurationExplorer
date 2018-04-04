@@ -1,0 +1,32 @@
+{
+	"types": [
+		{"name": "name",
+		"comparable": "true"},
+
+		{"name": "applicationCount",
+		"comparable": "true"},
+
+		{"name": "_id",
+		"comparable": "false"},
+
+		{"name": "applicationid",
+		"keyPrefix": "applicationid",
+		"collection": "application",
+		"comparable": "true"},
+
+		{"name": "clusterid",
+		"keyPrefix": "clusterid",
+		"collection": "cluster",
+		"comparable": "true"},
+
+		{"name": "node",
+		"keyPrefix": "node",
+		"collection": "node",
+		"comparable": "true"},
+
+		{"name": "virtualhost",
+		"keyPrefix": "virtualhost",
+		"collection": "virtualhost",
+		"comparable": "true"}
+	]
+}

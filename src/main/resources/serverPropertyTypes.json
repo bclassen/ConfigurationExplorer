@@ -1,0 +1,134 @@
+{
+  "types": [
+    {"name": "name",
+    "comparable": "true"},
+
+    {"name": "port",
+    "comparable": "true",
+    "profileName": "WC_defaulthost"},
+
+    {"name": "_id",
+    "comparable": "false"},
+
+    {"name": "jvmProperties",
+    "prefix": "jvmProperty",
+    "subtypes": [
+      {"name": "name",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "value",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "description",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "validationExpression",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "required",
+      "nested": "false",
+      "comparable": "true"}
+    ]
+    "comparable": "true"},
+
+    {"name": "qcfs",
+    "prefix": "qcf",
+    "subtypes": [
+      {"name": "qmanager",
+      "nested": "false",
+      "comparable": "true",
+      "profileName": "ccdtQmgrName"},
+
+      {"name": "ccdtUrl",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "description",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "name",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "jndiname",
+      "nested": "false",
+      "comparable": "true",
+      "profileName": "jndiName"}
+    ]
+    "comparable": "true"},
+
+    {"name": "tcfs",
+    "prefix": "tcf",
+    "subtypes": [
+      {"name": "qmanager",
+      "nested": "false",
+      "comparable": "true",
+      "profileName": "ccdtQmgrName"},
+
+      {"name": "ccdtUrl",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "description",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "clientId",
+      "nested": "false",
+      "comparable": "true",
+      "profileName": "clientId"},
+
+      {"name": "name",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "jndiname",
+      "nested": "false",
+      "comparable": "true",
+      "profileName": "jndiName"}
+    ]
+    "comparable": "true"},
+
+    {"name": "ases",
+    "prefix": "as",
+    "subtypes": [
+      {"name": "ccdtQmgrName",
+      "nested": "false",
+      "comparable": "true"
+      "profileName": "qmgrName"},
+
+      {"name": "ccdtUrl",
+      "nested": "false",
+      "comparable": "true",
+      "profileName": "ccdtURL"},
+
+      {"name": "queueJndi",
+      "nested": "false",
+      "comparable": "true",
+      "profileName": "destinationJndiName"},
+
+      {"name": "name",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "maxPoolSize",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "failureDeliveryCount",
+      "nested": "false",
+      "comparable": "true"},
+
+      {"name": "jndiname",
+      "nested": "false",
+      "comparable": "true",
+      "profileName": "jndiName"}
+    ]
+    "comparable": "true"}
+  ]
+}

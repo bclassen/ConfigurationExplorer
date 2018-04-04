@@ -1,0 +1,67 @@
+{
+	"types": [
+		{"name": "beanstore",
+		"symbol": "BS",
+		"clusterable": "true"},
+
+		{"name": "backoffice",
+		"symbol": "BO",
+		"clusterable": "true"},
+
+		{"name": "mpos",
+		"symbol": "MPOS",
+		"clusterable": "true"},
+
+		{"name": "dfm01",
+		"symbol": "DFM01",
+		"clusterable": "true"},
+
+		{"name": "dfm02",
+		"symbol": "DFM02",
+		"clusterable": "true"},
+
+		{"name": "dfm03",
+		"symbol": "DFM03",
+		"clusterable": "true"},
+
+		{"name": "dfm04",
+		"symbol": "DFM04",
+		"clusterable": "true"},
+
+		{"name": "storedfm",
+		"symbol": "MS01",
+		"clusterable": "true"},
+
+		{"name": "dfmmessagestore",
+		"symbol": "MS02",
+		"clusterable": "true"},
+
+		{"name": "dfmmessagestoresql",
+		"symbol": "MS02",
+		"clusterable": "true"},
+
+		{"name": "datadistribution",
+		"symbol": "DDS",
+		"clusterable": "false"},
+
+		{"name": "taskmanager",
+		"symbol": "TM",
+		"clusterable": "false"},
+
+		{"name": "etl",
+		"symbol": "ETL",
+		"clusterable": "true"},
+
+		{"name": "estatemanagement",
+		"symbol": "EM",
+		"clusterable": "true"},
+
+		{"name": "esi",
+		"symbol": "ESI",
+		"clusterable": "true"},
+
+		{"name": "vcm",
+		"symbol": "VCM",
+		"clusterable": "true"}
+	]
+}

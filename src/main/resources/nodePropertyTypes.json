@@ -1,0 +1,9 @@
+{
+	"types": [
+		{"name": "name",
+		"comparable": "true"},
+
+		{"name": "_id",
+		"comparable": "false"}
+	]
+}

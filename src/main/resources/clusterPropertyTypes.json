@@ -1,0 +1,14 @@
+{
+	"types": [
+		{"name": "name",
+		"comparable": "true"},
+
+		{"name": "_id",
+		"comparable": "false"},
+
+		{"name": "servers",
+		"keyPrefix": "serverid",
+		"collection": "server",
+		"comparable": "true"}
+	]
+}

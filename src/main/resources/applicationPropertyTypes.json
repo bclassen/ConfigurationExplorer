@@ -1,0 +1,109 @@
+{
+	"types": [
+		{"name": "name",
+		"comparable": "true"},
+
+		{"name": "warname",
+		"comparable": "true"},
+
+		{"name": "install",
+		"comparable": "true"},
+
+		{"name": "classloaderPolicy",
+		"comparable": "true"},
+
+		{"name": "webxml",
+		"comparable": "true"},
+
+		{"name": "ear",
+		"comparable": "true"},
+
+		{"name": "mapwebmod",
+		"comparable": "true"},
+
+		{"name": "index",
+		"comparable": "true"},
+
+		{"name": "_id",
+		"comparable": "false"},
+
+		{"name": "options",
+		"prefix": "options",
+		"subtypes": [
+			{"name": "name",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "value",
+			"nested": "false",
+			"comparable": "true"}
+		]
+		"comparable": "true"},
+
+		{"name": "ejbs",
+		"prefix": "ejb",
+		"subtypes": [
+			{"name": "MapEJBRefToEJBClassName",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "MapEJBRefToEJBRef",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "MapEJBRefToEJBEjb",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "MapEJBRefToEJBLocal",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "MapEJBRefToEJB",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "name",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "ejb",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "BindJndiForEJBNonMessageBinding",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "jarxml",
+			"nested": "false",
+			"comparable": "true"}
+		]
+		"comparable": "true"},
+
+		{"name": "resrefs",
+		"prefix": "resref",
+		"subtypes": [
+			{"name": "refname",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "restype",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "module",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "uri",
+			"nested": "false",
+			"comparable": "true"},
+
+			{"name": "jndiname",
+			"nested": "false",
+			"comparable": "true"}
+		]
+		"comparable": "true"}
+	]
+}
