@@ -55,7 +55,7 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
+<!--     <dependency>
       <groupId>com.ibm.ws.admin</groupId>
       <artifactId>client</artifactId>
       <version>8.5.0</version>
@@ -67,7 +67,7 @@
       <version>8.5.0</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
+ -->    <dependency>
       <groupId>org.mongodb</groupId>
       <artifactId>mongodb-driver</artifactId>
       <scope>provided</scope>

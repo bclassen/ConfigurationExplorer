@@ -27,8 +27,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 
-import com.ibm.websphere.management.async.client.AsyncCommandHandlerIF;
-import com.ibm.websphere.management.cmdframework.provider.CommandNotification;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
@@ -96,16 +94,6 @@ public class VBSConfigurationClient extends ManagementClient
           in.close();
       }
     }
-  }
-
-  public class AsyncCmdHandler implements AsyncCommandHandlerIF
-  {
-
-    public void handleNotification(CommandNotification commandnotification)
-    {
-      System.out.println("Notification received: " + commandnotification);
-    }
-
   }
 
   public void clearConfigAndPopulateFromFile()
