@@ -36,7 +36,7 @@ public class ConfigurationView implements Serializable
   @Autowired(required = true)
   public VBSConfigurationClient configClient;
   @Autowired(required = true)
-  private ComparisonView comparisonView;
+  //private ComparisonView comparisonView;
   private String header, selectedNodeText;
 
   public TreeNode getRoot()
@@ -180,7 +180,7 @@ public class ConfigurationView implements Serializable
     FacesContext.getCurrentInstance().addMessage(null, message);
 
     DBObject configDoc = configClient.getConfigDocument(event.getTreeNode().toString(), event.getTreeNode().getParent().toString());
-    comparisonView.setConfigDoc(configDoc);
+    //comparisonView.setConfigDoc(configDoc);
   }
 
   public void onNodeUnselect(NodeUnselectEvent event)

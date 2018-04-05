@@ -1,131 +1,131 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:f="http://java.sun.com/jsf/core">
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Configuration Explorer Home Page</title>
-	<h:outputScript library="js" name="renderjson.js" />
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <title>Configuration Explorer Home Page</title>
+  <h:outputScript library="js" name="renderjson.js" />
 </h:head>
 <h:body>
-	<h:form id="form" enctype="multipart/form-data">
-		<p:layout fullPage="true">
-			<p:layoutUnit position="north" size="70" resizable="false"
-				closable="false" collapsible="false">
-				<p:growl id="messages" showDetail="true" />
+  <h:form id="form" enctype="multipart/form-data">
+    <p:layout fullPage="true">
+      <p:layoutUnit position="north" size="70" resizable="false"
+        closable="false" collapsible="false">
+        <p:growl id="messages" showDetail="true" />
 
-				<p:toolbar>
-					<f:facet name="left">
-						<span class="ui-separator"> <span
-							class="ui-icon ui-icon-grip-dotted-vertical" />
-						</span>
+        <p:toolbar>
+          <f:facet name="left">
+            <span class="ui-separator"> <span
+              class="ui-icon ui-icon-grip-dotted-vertical" />
+            </span>
 
-						<p:commandButton type="button" title="Save" icon="ui-icon-disk" />
-						<p:commandButton type="button" title="Delete" icon="ui-icon-trash" />
-						<p:commandButton type="button" title="Print" icon="ui-icon-print" />
-					</f:facet>
+            <p:commandButton type="button" title="Save" icon="ui-icon-disk" />
+            <p:commandButton type="button" title="Delete" icon="ui-icon-trash" />
+            <p:commandButton type="button" title="Print" icon="ui-icon-print" />
+          </f:facet>
 
-					<f:facet name="right">
-						<p:menuButton value="Options">
-							<p:menuitem value="Save" actionListener="#{toolbarView.save}"
-								update="messages" icon="ui-icon-disk" />
-							<p:menuitem value="Update" actionListener="#{toolbarView.update}"
-								update="messages" icon="ui-icon-arrowrefresh-1-w" />
-							<p:menuitem value="Delete" actionListener="#{toolbarView.delete}"
-								ajax="false" icon="ui-icon-close" />
-							<p:menuitem value="Homepage" url="http://www.primefaces.org"
-								icon="ui-icon-extlink" />
-						</p:menuButton>
-					</f:facet>
+          <f:facet name="right">
+            <p:menuButton value="Options">
+              <p:menuitem value="Save" actionListener="#{toolbarView.save}"
+                update="messages" icon="ui-icon-disk" />
+              <p:menuitem value="Update" actionListener="#{toolbarView.update}"
+                update="messages" icon="ui-icon-arrowrefresh-1-w" />
+              <p:menuitem value="Delete" actionListener="#{toolbarView.delete}"
+                ajax="false" icon="ui-icon-close" />
+              <p:menuitem value="Homepage" url="http://www.primefaces.org"
+                icon="ui-icon-extlink" />
+            </p:menuButton>
+          </f:facet>
 
-				</p:toolbar>
-			</p:layoutUnit>
-			<p:layoutUnit position="west" size="350" resizable="false"
-				closable="false" collapsible="false">
-				<p:fileUpload fileUploadListener="#{treeConfigView.open}"
-					mode="advanced" dragDropSupport="true" update="messages,configView"
-					sizeLimit="1000000" allowTypes="/(\.|\/)(properties)$/" auto="true" />
-				<h:panelGroup id="configView">
-					<p:outputPanel autoUpdate="true">
-						<h:outputText value="#{treeConfigView.header}" />
-					</p:outputPanel>
-					<p:tree value="#{treeConfigView.root}" var="node"
-						selectionMode="single" selection="#{treeConfigView.selectedNode}">
-						<p:ajax event="expand" update=":form:messages"
-							listener="#{treeConfigView.onNodeExpand}" />
-						<p:ajax event="collapse" update=":form:messages"
-							listener="#{treeConfigView.onNodeCollapse}" />
-						<p:ajax event="select" update=":form:messages,:form:centerStage"
-							listener="#{treeConfigView.onNodeSelect}" />
-						<p:ajax event="unselect" update=":form:messages"
-							listener="#{treeConfigView.onNodeUnselect}" />
-						<p:treeNode expandedIcon="ui-icon-folder-open"
-							collapsedIcon="ui-icon-folder-collapsed">
-							<h:outputText value="#{node}" />
-						</p:treeNode>
-					</p:tree>
-				</h:panelGroup>
-			</p:layoutUnit>
-			<p:layoutUnit position="center">
-				<p:fieldset legend="Basic" style="margin-bottom:20px">
-					<h:panelGrid id="centerStage" columns="2" cellpadding="5">
-						<h:outputText value="#{treeConfigView.selectedNodeText}" />
-						<p:treeTable id="comparison" value="#{ttBasicView.root}" var="document" selectionMode="single" selection="#{ttBasicView.selectedNode}">
-							<f:facet name="header">#{ttBasicView.header}</f:facet>
-							<p:column headerText="Name">
-								<h:outputText value="#{document.name}" />
-							</p:column>
-							<p:column headerText="ConfigValue">
-								<h:outputText value="#{document.configValue}" />
-							</p:column>
-							<p:column headerText="ProfileValue">
-								<h:outputText value="#{document.profileValue}" />
-							</p:column>
-						</p:treeTable>
-						<p:contextMenu for="comparison" nodeType="link">
-							<p:menuitem value="View" actionListener="#{ttBasicView.onLinkNodeSelect}"/>
-						</p:contextMenu>
-						<p:contextMenu for="comparison" nodeType="property">
-							<p:menuitem value="Edit"/>
-						</p:contextMenu>
-
-					</h:panelGrid>
-				</p:fieldset>
-			</p:layoutUnit>
-			<p:layoutUnit position="east" size="350"
-				header="#{treeProfileView.header}" resizable="false"
-				closable="false" collapsible="false" effect="drop">
-				<p:inputText value="#{treeProfileView.URL}" required="true"
-					label="Deployment Manager SOAP URL" />
-				<p:commandButton value="Refresh Profile"
-					actionListener="#{treeProfileView.open}"
-					update="messages,profileView" />
-				<h:panelGroup id="profileView">
-					<p:tree value="#{treeProfileView.root}" var="node"
-						selectionMode="single" selection="#{treeProfileView.selectedNode}">
-						<p:ajax event="expand" update=":form:messages"
-							listener="#{treeProfileView.onNodeExpand}" />
-						<p:ajax event="collapse" update=":form:messages"
-							listener="#{treeProfileView.onNodeCollapse}" />
-						<p:ajax event="select" update=":form:messages"
-							listener="#{treeProfileView.onNodeSelect}" />
-						<p:ajax event="unselect" update=":form:messages"
-							listener="#{treeProfileView.onNodeUnselect}" />
-						<p:treeNode expandedIcon="ui-icon-folder-open"
-							collapsedIcon="ui-icon-folder-collapsed">
-							<h:outputText value="#{node}" />
-						</p:treeNode>
-					</p:tree>
-				</h:panelGroup>
-			</p:layoutUnit>
-			<p:layoutUnit position="south" size="50" resizable="false"
-				closable="false" collapsible="false">
-				Status Bar
-			</p:layoutUnit>
-		</p:layout>
-	</h:form>
+        </p:toolbar>
+      </p:layoutUnit>
+      <p:layoutUnit position="west" size="350" resizable="false"
+        closable="false" collapsible="false">
+        <p:fileUpload fileUploadListener="#{treeConfigView.open}"
+          mode="advanced" dragDropSupport="true" update="messages,configView"
+          sizeLimit="1000000" allowTypes="/(\.|\/)(properties)$/" auto="true" />
+        <h:panelGroup id="configView">
+          <p:outputPanel autoUpdate="true">
+            <h:outputText value="#{treeConfigView.header}" />
+          </p:outputPanel>
+          <p:tree value="#{treeConfigView.root}" var="node"
+            selectionMode="single" selection="#{treeConfigView.selectedNode}">
+            <p:ajax event="expand" update=":form:messages"
+              listener="#{treeConfigView.onNodeExpand}" />
+            <p:ajax event="collapse" update=":form:messages"
+              listener="#{treeConfigView.onNodeCollapse}" />
+            <p:ajax event="select" update=":form:messages,:form:centerStage"
+              listener="#{treeConfigView.onNodeSelect}" />
+            <p:ajax event="unselect" update=":form:messages"
+              listener="#{treeConfigView.onNodeUnselect}" />
+            <p:treeNode expandedIcon="ui-icon-folder-open"
+              collapsedIcon="ui-icon-folder-collapsed">
+              <h:outputText value="#{node}" />
+            </p:treeNode>
+          </p:tree>
+        </h:panelGroup>
+      </p:layoutUnit>
+      <p:layoutUnit position="center">
+        <p:fieldset legend="Basic" style="margin-bottom:20px">
+          <h:panelGrid id="centerStage" columns="2" cellpadding="5">
+            <h:outputText value="#{treeConfigView.selectedNodeText}" />
+<!-- 						<p:treeTable id="comparison" value="#{ttBasicView.root}" var="document" selectionMode="single" selection="#{ttBasicView.selectedNode}">
+              <f:facet name="header">#{ttBasicView.header}</f:facet>
+              <p:column headerText="Name">
+                <h:outputText value="#{document.name}" />
+              </p:column>
+              <p:column headerText="ConfigValue">
+                <h:outputText value="#{document.configValue}" />
+              </p:column>
+              <p:column headerText="ProfileValue">
+                <h:outputText value="#{document.profileValue}" />
+              </p:column>
+            </p:treeTable>
+            <p:contextMenu for="comparison" nodeType="link">
+              <p:menuitem value="View" actionListener="#{ttBasicView.onLinkNodeSelect}"/>
+            </p:contextMenu>
+            <p:contextMenu for="comparison" nodeType="property">
+              <p:menuitem value="Edit"/>
+            </p:contextMenu>
+ -->
+          </h:panelGrid>
+        </p:fieldset>
+      </p:layoutUnit>
+      <p:layoutUnit position="east" size="350"
+        header="#{treeProfileView.header}" resizable="false"
+        closable="false" collapsible="false" effect="drop">
+        <p:inputText value="#{treeProfileView.URL}" required="true"
+          label="Deployment Manager SOAP URL" />
+        <p:commandButton value="Refresh Profile"
+          actionListener="#{treeProfileView.open}"
+          update="messages,profileView" />
+        <h:panelGroup id="profileView">
+          <p:tree value="#{treeProfileView.root}" var="node"
+            selectionMode="single" selection="#{treeProfileView.selectedNode}">
+            <p:ajax event="expand" update=":form:messages"
+              listener="#{treeProfileView.onNodeExpand}" />
+            <p:ajax event="collapse" update=":form:messages"
+              listener="#{treeProfileView.onNodeCollapse}" />
+            <p:ajax event="select" update=":form:messages"
+              listener="#{treeProfileView.onNodeSelect}" />
+            <p:ajax event="unselect" update=":form:messages"
+              listener="#{treeProfileView.onNodeUnselect}" />
+            <p:treeNode expandedIcon="ui-icon-folder-open"
+              collapsedIcon="ui-icon-folder-collapsed">
+              <h:outputText value="#{node}" />
+            </p:treeNode>
+          </p:tree>
+        </h:panelGroup>
+      </p:layoutUnit>
+      <p:layoutUnit position="south" size="50" resizable="false"
+        closable="false" collapsible="false">
+        Status Bar
+      </p:layoutUnit>
+    </p:layout>
+  </h:form>
 </h:body>
 </html>

@@ -29,8 +29,8 @@ public class ConfigurationManager
     //jmxClient.getClusterMemberBootStraps();
 
     VBSConfigurationClient ace = new VBSConfigurationClient();
-    RunningProfileClient rpc = null;
-    try
+    //RunningProfileClient rpc = null;
+/*    try
     {
       rpc = new RunningProfileClient(RunningProfileClient.DMGR_HOST + ":" + RunningProfileClient.DMGR_PORT);
     }
@@ -39,7 +39,7 @@ public class ConfigurationManager
       e.printStackTrace();
       System.exit(1);
     }
-    ProfileConfigComparator profileComparator = new ProfileConfigComparator();
+*/    ProfileConfigComparator profileComparator = new ProfileConfigComparator();
     InputStream in = VBSConfigurationClient.class.getClassLoader().getResourceAsStream("config.E.properties");
     try
     {
@@ -53,11 +53,11 @@ public class ConfigurationManager
 
     ace.clearConfigAndPopulateFromFile();
 
-    rpc.pullFromRunningProfile();
+    //rpc.pullFromRunningProfile();
 
-    HashMap<String, ArrayList<ComparisonResult>> clusterResults = profileComparator.compareClusterCollections(ace.getClusters(), rpc.getClusters());
-    return clusterResults.toString();
-
+    //HashMap<String, ArrayList<ComparisonResult>> clusterResults = profileComparator.compareClusterCollections(ace.getClusters(), rpc.getClusters());
+    //return clusterResults.toString();
+    return "";
     //HashMap<String,ArrayList<ComparisonResult>> results = profileComparator.compareApplicationCollections(ace.getApplications(), rpc.getApplications());
     //System.out.println(results);
 
