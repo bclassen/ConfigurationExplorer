@@ -15,8 +15,6 @@ import java.util.HashMap;
 
 import org.springframework.core.io.InputStreamResource;
 
-import com.ibm.websphere.management.exception.ConnectorException;
-
 /**
  * @author Administrator
  *
